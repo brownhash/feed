@@ -23,8 +23,6 @@ class Twitter(object):
         self.access_token = access_token if access_token else os.environ['TWITTER_ACCESS_TOKEN']
         self.access_token_secret = access_token_secret if access_token_secret else os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 
-        print('>>>', self.consumer_key)
-
     # Initiate tweepy client with above provided credentials
     def __client(self):
         auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
