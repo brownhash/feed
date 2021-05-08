@@ -20,7 +20,11 @@ jobs:
       - name: Check for feed and post
         run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
-            echo "Do something with this ${changed_file}."
+            if [[ "${changed_file}" == *".json"* ]]; then
+              python3 ./src/main.py --post_file "${changed_file}"
+            else
+              echo "skipping ${changed_file}"
+            fi
           done
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.access_token }}
