@@ -1,4 +1,4 @@
-# Json files that contains what to post where
+# Json files that contain what to post where
 
 Format -
 
