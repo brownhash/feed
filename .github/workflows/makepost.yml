@@ -27,7 +27,7 @@ jobs:
             fi
           done
         env:
-          TWITTER_CONSUMER_KEY: ${{ secrets.ACCESS_TOKEN }}
-          TWITTER_CONSUMER_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
-          TWITTER_ACCESS_TOKEN: ${{ secrets.CONSUMER_KEY }}
-          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          TWITTER_CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }} 
+          TWITTER_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}

@@ -17,7 +17,6 @@ class MakePost(object):
     def __init__(self, post_data):
         if 'tweet' in post_data['post_type']:
             response = self.__make_tweet(content=post_data['content'])
-            response_aggregator.append(response)
             print('Tweet was successful')
 
     def __make_tweet(self, content):
