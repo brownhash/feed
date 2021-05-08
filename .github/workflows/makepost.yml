@@ -1,0 +1,25 @@
+name: Feed update
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  make_posts:
+    name: Make posts
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check for feed and post
+        uses: jitterbit/get-changed-files@v1
+        run: |
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            echo "Do something with this ${changed_file}."
+          done
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.access_token }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.access_token_secret }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.consumer_key }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.consumer_secret }}
