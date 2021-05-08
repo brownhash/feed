@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo python3 -m pip install -r ./src/requirements.txt
       - id: files
         uses: jitterbit/get-changed-files@v1
       - name: Check for feed and post
