@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Check for feed and post
+      - id: files
         uses: jitterbit/get-changed-files@v1
+      - name: Check for feed and post
         run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
