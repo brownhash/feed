@@ -24,7 +24,7 @@ class Twitter(object):
         self.access_token_secret = access_token_secret if access_token_secret else os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 
     # Initiate tweepy client with above provided credentials
-    def client(self):
+    def __client(self):
         auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
         auth.set_access_token(self.access_token, self.access_token_secret)
         api = tweepy.API(auth)
@@ -35,6 +35,10 @@ class Twitter(object):
     def make_tweet(self, tweet):
         tweet_type = type(tweet).__name__
         if tweet_type == 'str':
-            self.client().update_status(status=tweet)
+            tweet_len = len(tweet)
+            if tweet_len <= 280:
+                return self.__client().update_status(status=tweet)
+            else:
+                raise Exception('tweet exceeds the twitter limit of 280 chars by `{}` chars'.format(tweet_len-280))
         else:
             raise Exception('tweet can only be a string value and not `{}`'.format(tweet_type))
