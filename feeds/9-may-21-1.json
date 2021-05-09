@@ -1,0 +1,4 @@
+{
+    "post_type": ["tweet"],
+    "content": "People, please stop structuring Go projects as Java. For a good reference check this out - https://github.com/golang-standards/project-layout #golang #godev #doitright"
+}
