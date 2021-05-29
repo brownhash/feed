@@ -1,0 +1,4 @@
+{
+    "post_type": ["tweet"],
+    "content": "Published a blog on architecting a Configuration and Secrets managenet store. Check it out here - https://brownhash.medium.com/configuration-secrets-management-at-scale-4ae85fb34feb #blog #secrets #configurations #consul #vault #aws"
+}
